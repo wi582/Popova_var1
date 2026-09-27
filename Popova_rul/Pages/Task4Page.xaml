@@ -23,17 +23,17 @@
 
         <TextBlock Grid.Row="1" Text="Введите массив через пробел:"
                    Margin="0,0,0,5"/>
-        <!-- УБРАЛИ Text="1 2 3 4 5 6 7 8" -->
+        
         <TextBox x:Name="txtArray" Height="30" FontSize="14"
-                 Margin="0,0,0,10"/>
+                 Margin="0,37,0,6" Grid.RowSpan="2"/>
 
         <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,10">
             <TextBlock Text="m = " VerticalAlignment="Center"/>
-            <!-- УБРАЛИ Text="3" -->
+
             <TextBox x:Name="txtM" Width="60" Height="25"
                      Margin="5,0,20,0" VerticalAlignment="Center"/>
             <TextBlock Text="n = " VerticalAlignment="Center"/>
-            <!-- УБРАЛИ Text="5" -->
+
             <TextBox x:Name="txtN" Width="60" Height="25"
                      Margin="5,0,0,0" VerticalAlignment="Center"/>
         </StackPanel>

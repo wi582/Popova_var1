@@ -41,36 +41,29 @@ namespace Popova_rul.Pages
                 return;
             }
 
-            // Генерируем матрицу
             int[,] matrix = new int[n, m];
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
-                    matrix[i, j] = rnd.Next(-10, 11); // от -10 до 10
+                    matrix[i, j] = rnd.Next(-10, 11); 
 
-            // Выводим исходную
             txtOriginal.Text = MatrixToString(matrix);
 
-            // Переводим в одномерный массив для сортировки
             int[] flat = new int[n * m];
             int k = 0;
             for (int i = 0; i < n; i++)
                 for (int j = 0; j < m; j++)
                     flat[k++] = matrix[i, j];
 
-            // Сортируем по возрастанию
             int[] asc = (int[])flat.Clone();
             Array.Sort(asc);
 
-            // Сортируем по убыванию
             int[] desc = (int[])flat.Clone();
             Array.Sort(desc);
             Array.Reverse(desc);
 
-            // Обратно в матрицы
             txtAsc.Text = MatrixToString(ArrayToMatrix(asc, n, m));
             txtDesc.Text = MatrixToString(ArrayToMatrix(desc, n, m));
 
-            // Мин и макс
             int min = flat[0];
             int max = flat[0];
             for (int i = 1; i < flat.Length; i++)
@@ -82,7 +75,6 @@ namespace Popova_rul.Pages
             txtMinMax.Text = $"Минимум = {min}, Максимум = {max}";
         }
 
-        // Матрица → строка для вывода
         private string MatrixToString(int[,] matrix)
         {
             StringBuilder sb = new StringBuilder();
@@ -100,7 +92,6 @@ namespace Popova_rul.Pages
             return sb.ToString();
         }
 
-        // Одномерный массив → матрица
         private int[,] ArrayToMatrix(int[] arr, int n, int m)
         {
             int[,] matrix = new int[n, m];

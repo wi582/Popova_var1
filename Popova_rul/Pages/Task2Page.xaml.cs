@@ -34,7 +34,6 @@ namespace Popova_rul.Pages
                 return;
             }
 
-            // Пробуем преобразовать в целое число
             int intNumber;
             if (int.TryParse(input, out intNumber))
             {
@@ -42,7 +41,6 @@ namespace Popova_rul.Pages
                 return;
             }
 
-            // Пробуем преобразовать в вещественное число
             double doubleNumber;
             if (double.TryParse(input, out doubleNumber))
             {

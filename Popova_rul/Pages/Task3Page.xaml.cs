@@ -26,7 +26,6 @@ namespace Popova_rul.Pages
         }
         private void btnCheck_Click(object sender, RoutedEventArgs e)
         {
-            // Разбиваем строку на числа
             string[] parts = txtInput.Text.Split(
                 new char[] { ' ' },
                 StringSplitOptions.RemoveEmptyEntries);
@@ -37,18 +36,15 @@ namespace Popova_rul.Pages
                 return;
             }
 
-            // Группируем числа по ключу (отсортированные цифры)
             Dictionary<string, List<string>> groups =
                 new Dictionary<string, List<string>>();
 
             foreach (string s in parts)
             {
-                // Проверка, что это число
                 int num;
                 if (!int.TryParse(s, out num))
                     continue;
 
-                // Строим ключ: цифры числа, отсортированные по возрастанию
                 char[] digits = Math.Abs(num).ToString().ToCharArray();
                 Array.Sort(digits);
                 string key = new string(digits);
@@ -59,7 +55,6 @@ namespace Popova_rul.Pages
                 groups[key].Add(s);
             }
 
-            // Выводим только группы, где больше 1 числа
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Найденные группы чисел из одних и тех же цифр:");
 

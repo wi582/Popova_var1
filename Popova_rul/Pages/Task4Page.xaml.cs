@@ -26,7 +26,7 @@ namespace Popova_rul.Pages
         }
         private void btnCheck_Click(object sender, RoutedEventArgs e)
         {
-            // Считываем массив
+
             string[] parts = txtArray.Text.Split(
                 new char[] { ' ' },
                 StringSplitOptions.RemoveEmptyEntries);
@@ -41,7 +41,6 @@ namespace Popova_rul.Pages
                 }
             }
 
-            // Считываем m и n
             int m, n;
             if (!int.TryParse(txtM.Text, out m) ||
                 !int.TryParse(txtN.Text, out n))
@@ -56,14 +55,12 @@ namespace Popova_rul.Pages
                 return;
             }
 
-            // Запоминаем исходный массив
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Исходный массив: " + string.Join(" ", x));
 
-            // Алгоритм трёх переворотов
-            Reverse(x, 0, x.Length - 1);   // 1. весь массив
-            Reverse(x, 0, n - 1);          // 2. первые n
-            Reverse(x, n, x.Length - 1);   // 3. последние m
+            Reverse(x, 0, x.Length - 1);   
+            Reverse(x, 0, n - 1);         
+            Reverse(x, n, x.Length - 1);   
 
             sb.AppendLine("Результат: " + string.Join(" ", x));
             sb.AppendLine();
@@ -73,7 +70,6 @@ namespace Popova_rul.Pages
             txtResult.Text = sb.ToString();
         }
 
-        // Переворот части массива от left до right включительно
         private void Reverse(int[] arr, int left, int right)
         {
             while (left < right)
@@ -86,7 +82,6 @@ namespace Popova_rul.Pages
             }
         }
 
-        // Вспомогательный метод — кусок массива
         private int[] SubArray(int[] arr, int start, int count)
         {
             int[] result = new int[count];
