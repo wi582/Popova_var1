@@ -28,14 +28,12 @@ namespace Popova_rul.Pages
         {
             string input = txtInput.Text.Trim();
 
-            // Проверка: пустая строка?
             if (input.Length == 0)
             {
                 txtResult.Text = "Ошибка: введите число!";
                 return;
             }
 
-            // Проверка: только 0 и 1?
             for (int i = 0; i < input.Length; i++)
             {
                 if (input[i] != '0' && input[i] != '1')
@@ -45,7 +43,6 @@ namespace Popova_rul.Pages
                 }
             }
 
-            // Считаем остаток от деления на 15
             int remainder = 0;
             for (int i = 0; i < input.Length; i++)
             {
